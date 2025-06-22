@@ -1,5 +1,23 @@
 <?php // custom functions.php template for WordPress Theme Development
 
+add_filter( 'woocommerce_product_get_rating_html', 'custom_woocommerce_product_get_rating_html', 10, 3 );
+
+function custom_woocommerce_product_get_rating_html( $html, $rating, $count ) {
+    $html = '<div class="star-rating">';
+    for ( $i = 1; $i <= 5; $i++ ) {
+        if ($rating >= $i) {
+            $html .= '<span class="star filled"></span>';
+        } elseif ($rating > $i-1) {
+            $html .= '<span class="star half-filled"></span>';
+        } else {
+            $html .= '<span class="star"></span>';
+        }
+    }
+    $html .= '</div>';
+
+    return $html;
+}
+
 // query string remover from static content
 function _remove_script_version( $src ){ 
     $parts = explode( '?', $src ); 	

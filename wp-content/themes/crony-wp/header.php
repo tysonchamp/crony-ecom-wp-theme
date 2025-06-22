@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/slick.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/slick-theme.css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/product-slider.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 </head>
 <body>
@@ -108,9 +109,11 @@
                 </div>
                 <div class="icon-menu">
                     <ul class="d-flex align-items-center gap-4">
-                        <div class="input-group search">
-                            <input type="text" class="form-control rounded-5" id="searchInput" placeholder="" aria-describedby="button-addon2">
-                        </div>
+                        <form action="<?php echo esc_url( home_url( '/' ) ); ?>" method="get">
+                            <div class="input-group search">
+                                <input type="text" class="form-control rounded-5" id="searchInput" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" placeholder="<?php esc_attr_e( 'Search &hellip;', 'shape' ); ?>" aria-describedby="button-addon2">
+                            </div>
+                        </form>
                         <!-- <li>
                             <a href="#">
                                 <i class="fa-light fa-heart"></i>

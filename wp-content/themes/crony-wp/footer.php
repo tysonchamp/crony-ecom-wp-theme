@@ -396,6 +396,7 @@
     <!------------------ Scripts Import -------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/slider.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/customize.js"></script>
     <!-- catagory-slider -->
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://woocommerce.com/document/template-structure/
+ * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 3.6.0
  */
@@ -29,15 +29,19 @@ $rating_count = $product->get_rating_count();
 $review_count = $product->get_review_count();
 $average      = $product->get_average_rating();
 
-if ( $rating_count > 0 ) : ?>
+//if ( $rating_count > 0 ) : ?>
 
-	<div class="woocommerce-product-rating">
+	<!-- <div class="woocommerce-product-rating">
 		<?php echo wc_get_rating_html( $average, $rating_count ); // WPCS: XSS ok. ?>
 		<?php if ( comments_open() ) : ?>
 			<?php //phpcs:disable ?>
 			<a href="#reviews" class="woocommerce-review-link" rel="nofollow">(<?php printf( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)</a>
 			<?php // phpcs:enable ?>
 		<?php endif ?>
+	</div> -->
+	<div class="ratings">
+		<span><i class="bi bi-star-fill"></i> <?php echo $average; ?></span> <img src="<?php echo get_template_directory_uri(); ?>/images/check-2.png" class="vr">
+		<?php echo $review_count; ?> Verified Reviews
 	</div>
 
-<?php endif; ?>
+<?php //endif; ?>

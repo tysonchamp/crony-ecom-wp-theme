@@ -10,42 +10,48 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see         https://woocommerce.com/document/template-structure/
+ * @see         https://woo.com/document/template-structure/
  * @package     WooCommerce\Templates
- * @version     9.6.0
+ * @version     3.9.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
-}
+} ?>
+	
+<?php if ( $related_products ) : ?>
 
-if ( $related_products ) : ?>
+	<section class="fluid-block new-arrivals sarees p-listing">
+        <div class="container">
+            <?php
+            $heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
 
-	<section class="related products">
+            if ( $heading ) :
+                ?>
+                <div class="title-div text-center mb-5">
+                    <h2 class="fw-bold mb-0 text-uppercase"><?php echo esc_html( $heading ); ?></h2>
+                    <!-- <small>Recommended Products for You</small> -->
+                </div>
+            <?php endif; ?>
+            
+            <?php woocommerce_product_loop_start(); ?>
+            <div class="collections">
+                <div class="row">
+                <?php foreach ( $related_products as $related_product ) : ?>
 
-		<?php
-		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
+                        <?php
+                        $post_object = get_post( $related_product->get_id() );
 
-		if ( $heading ) :
-			?>
-			<h2><?php echo esc_html( $heading ); ?></h2>
-		<?php endif; ?>
-		<?php woocommerce_product_loop_start(); ?>
+                        setup_postdata( $GLOBALS['post'] =& $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
 
-			<?php foreach ( $related_products as $related_product ) : ?>
+                        wc_get_template_part( 'content', 'product' );
+                        ?>
 
-					<?php
-					$post_object = get_post( $related_product->get_id() );
-
-					setup_postdata( $GLOBALS['post'] = $post_object ); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited, Squiz.PHP.DisallowMultipleAssignments.Found
-
-					wc_get_template_part( 'content', 'product' );
-					?>
-
-			<?php endforeach; ?>
-
-		<?php woocommerce_product_loop_end(); ?>
-
+                <?php endforeach; ?>
+                </div>
+            </div>
+            <?php woocommerce_product_loop_end(); ?>
+        </div>
 	</section>
 	<?php
 endif;

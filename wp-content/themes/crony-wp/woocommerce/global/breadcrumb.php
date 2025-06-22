@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see         https://woocommerce.com/document/template-structure/
+ * @see         https://woo.com/document/template-structure/
  * @package     WooCommerce\Templates
  * @version     2.3.0
  * @see         woocommerce_breadcrumb()
@@ -22,25 +22,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! empty( $breadcrumb ) ) {
 
-	echo $wrap_before;
+	echo "$wrap_before <ol class=\"breadcrumb\"> ";
 
 	foreach ( $breadcrumb as $key => $crumb ) {
 
 		echo $before;
 
 		if ( ! empty( $crumb[1] ) && sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo '<a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a>';
+			echo '<li class="breadcrumb-item"><a href="' . esc_url( $crumb[1] ) . '">' . esc_html( $crumb[0] ) . '</a> </li>';
 		} else {
-			echo esc_html( $crumb[0] );
+			echo '<li class="breadcrumb-item active">' . esc_html( $crumb[0] ) . '</li>';
 		}
 
 		echo $after;
 
 		if ( sizeof( $breadcrumb ) !== $key + 1 ) {
-			echo $delimiter;
+			// echo $delimiter;
 		}
 	}
 
-	echo $wrap_after;
+	echo "</ol>\n $wrap_after";
 
 }

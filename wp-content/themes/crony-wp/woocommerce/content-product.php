@@ -10,58 +10,48 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://woocommerce.com/document/template-structure/
+ * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.4.0
+ * @version 3.6.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 global $product;
 
-// Check if the product is a valid WooCommerce product and ensure its visibility before proceeding.
-if ( ! is_a( $product, WC_Product::class ) || ! $product->is_visible() ) {
+// Ensure visibility.
+if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
-	<?php
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
-</li>
+<div class="col-lg-3 col-md-3 col-6">
+	<div class="card border-0 rounded-4 shadow-lg">
+		<a href="<?php the_permalink(); ?>" class="card-img">
+			<img src="<?php echo esc_url( $product->get_image_id() ? wp_get_attachment_image_url( $product->get_image_id(), 'full' ) : wc_placeholder_img_src() ); ?>" alt="" class="img-fluid square-img">
+		</a>
+		<div class="card-body p-4">
+			<div class="info">
+				<a href="<?php the_permalink(); ?>" class="fs-5">
+					<?php the_title(); ?>
+				</a>
+			</div>
+			<div class="price d-flex align-items-center">
+				<div class="left d-flex align-items-center gap-2">
+					<!-- <strong class="fs-4">₹1999</strong>
+					<span class="text-decoration-line-through text-muted">₹2499</span> -->
+					<?php echo $product->get_price_html(); ?>
+				</div>
+				<div class="right">
+					<span class="text-success">
+						<span>
+							<i class="bi bi-star-fill"></i>
+							<?php echo $product->get_average_rating(); ?>
+						</span>
+						(<?php echo $product->get_review_count(); ?>)
+					</span>
+				</div>
+			</div>
+			<a href="<?php the_permalink(); ?>" class="btn btn-primary mt-3">Add to Cart</a>
+		</div>
+	</div>
+</div>

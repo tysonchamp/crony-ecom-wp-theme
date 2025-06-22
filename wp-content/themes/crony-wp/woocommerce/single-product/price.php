@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://woocommerce.com/document/template-structure/
+ * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
  * @version 3.0.0
  */
@@ -22,4 +22,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 
 ?>
-<p class="<?php echo esc_attr( apply_filters( 'woocommerce_product_price_class', 'price' ) ); ?>"><?php echo $product->get_price_html(); ?></p>
+<div class="d-flex price-box">
+	<div class="price detail-pricing">
+		<?php echo $product->get_price_html(); ?>
+	</div>
+	<div class="p-info">MRP inclusive of all taxes </div>
+</div>

@@ -10,7 +10,7 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see         https://woocommerce.com/document/template-structure/
+ * @see         https://woo.com/document/template-structure/
  * @package     WooCommerce\Templates
  * @version     1.6.4
  */
@@ -21,22 +21,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+<section class="product-details pb-5">
+	<div class="container col-lg-7 mx-auto">
+			<!-- <ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="#">Home</a></li>
+				<li class="breadcrumb-item"><a href="#">Library</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Data</li>
+			</ol> -->
+			<?php woocommerce_breadcrumb(); ?>
+			
+			<?php while ( have_posts() ) : ?>
+				<?php the_post(); ?>
 
-		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
+				<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
-
-		<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // end of the loop. ?>
 
 	<?php
 		/**
@@ -44,7 +43,7 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
 		 */
-		do_action( 'woocommerce_after_main_content' );
+		// do_action( 'woocommerce_after_main_content' );
 	?>
 
 	<?php
@@ -53,9 +52,15 @@ get_header( 'shop' ); ?>
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+		// do_action( 'woocommerce_sidebar' );
 	?>
 
+    <!-- LightBox -->
+    <div class="lightbox-wrapper">
+        <div class="lightbox-content"></div>
+    </div>
+    <!-- Overlay -->
+    <div class="overlay"></div>
 <?php
 get_footer( 'shop' );
 

@@ -10,12 +10,10 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://woocommerce.com/document/template-structure/
+ * @see     https://woo.com/document/template-structure/
  * @package WooCommerce\Templates
- * @version 9.7.0
+ * @version 7.8.0
  */
-
-use Automattic\WooCommerce\Enums\ProductType;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -28,6 +26,7 @@ global $product;
 
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
 $post_thumbnail_id = $product->get_image_id();
+$image_src = wp_get_attachment_image_src($post_thumbnail_id, 'full');
 $wrapper_classes   = apply_filters(
 	'woocommerce_single_product_image_gallery_classes',
 	array(
@@ -37,24 +36,39 @@ $wrapper_classes   = apply_filters(
 		'images',
 	)
 );
+
+$attachment_ids = $product->get_gallery_image_ids();
 ?>
-<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<div class="woocommerce-product-gallery__wrapper">
-		<?php
-		if ( $post_thumbnail_id ) {
-			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-		} else {
-			$wrapper_classname = $product->is_type( ProductType::VARIABLE ) && ! empty( $product->get_available_variations( 'image' ) ) ?
-				'woocommerce-product-gallery__image woocommerce-product-gallery__image--placeholder' :
-				'woocommerce-product-gallery__image--placeholder';
-			$html              = sprintf( '<div class="%s">', esc_attr( $wrapper_classname ) );
-			$html             .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-			$html             .= '</div>';
-		}
+<div class="product-slider">
+	<div class="product-images-wrapper">
+		<div class="preview-image-wrapper">
+			<img src="<?php echo esc_url($image_src[0]) ?>" class="preview-image" alt="Product Image" />
+			<div class="arrows hide-for-desktop">
+				<div class="next">
+					<img src="<?php echo get_template_directory_uri(  ) ?>/images/icon-next.svg" alt="Next Icon" />
+				</div>
+				<div class="prev">
+					<img src="<?php echo get_template_directory_uri(  ) ?>/images/icon-previous.svg" alt="Previous Icon" />
+				</div>
+			</div>
+			<div class="count">
+				<p>
+					<span class="current"></span> of
+					<span class="total"></span>
+				</p>
+			</div>
+		</div>
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		do_action( 'woocommerce_product_thumbnails' );
-		?>
+		<div class="thumbs-wrapper hide-for-mobile">
+			<?php if ( $attachment_ids && $product->get_image_id() ): ?>
+				<?php $imgCounter = 1; ?>
+				<?php foreach ( $attachment_ids as $attachment_id ): ?>
+					<div class="thumb-image <?php echo $imgCounter == 1 ? 'active' : '' ?>">
+						<img src="<?php echo wp_get_attachment_image_src($attachment_id, 'full')[0] ?>" alt="Product Thumb Image" />
+					</div>
+				<?php $imgCounter++; ?>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
 	</div>
 </div>
