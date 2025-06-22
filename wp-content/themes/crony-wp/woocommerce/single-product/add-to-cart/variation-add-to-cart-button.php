@@ -36,13 +36,13 @@ global $product;
 	<div class="accordion" id="accordionPanelsStayOpenExample">
 		<div class="accordion-item">
 			<h2 class="accordion-header">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+				<button class="accordion-button" type="button" data-bs-toggle="collapse"
 					data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
 					aria-controls="panelsStayOpen-collapseTwo">
 					Product Details
 				</button>
 			</h2>
-			<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+			<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
 				<div class="accordion-body">
 					<div class="block p-details">
 					<?php do_action( 'woocommerce_product_meta_start' ); ?>

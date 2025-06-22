@@ -28,14 +28,7 @@ echo wc_get_stock_html( $product ); // WPCS: XSS ok.
 if ( $product->is_in_stock() ) : ?>
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
-	<div class="block highlight-block">
-		<h5 class="block-title">Why you'll love it?</h5>
-		<ul class="bullet play_i">
-			<li>At vero eos et accusamus</li>
-			<li>Dignissimos ducimus qui blanditiis</li>
-			<li>Praesentium voluptatum deleniti atque</li>
-		</ul>
-	</div>
+
 	<form class="cart" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" method="post" enctype='multipart/form-data'>
 		<div class="d-flex mt15 s_form">
 			<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
@@ -63,79 +56,17 @@ if ( $product->is_in_stock() ) : ?>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
 	
-	<div class="block coupone">
-		<h5 class="small-title icon offer"><?php echo get_field('offer_box_title'); ?></h5>
-		<div class="owl-carousel" id="coupone_slider">
-			<?php if(have_rows('offers_boxes')): ?>
-				<?php while(have_rows('offers_boxes')): the_row(); ?>
-					<div class="item">
-						<div class="card text-bg-light mb-3">
-							<div class="card-header"><i class="bi bi-award"></i> <?php echo get_sub_field('offer_title'); ?></div>
-							<div class="card-body">
-								<p class="card-text"><?php echo get_sub_field('offer_texts'); ?></p>
-								<!-- <a href="#">See more</a> -->
-							</div>
-						</div>
-					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
-	</div>
-	<div class="block features">
-		<div class="d-flex">
-			<?php if(have_rows('all_features')): ?>
-				<?php while(have_rows('all_features')): the_row(); ?>
-					<div class="feature-item">
-						<img src="<?php echo get_sub_field('feature_icon'); ?>" alt="">
-						<h6><strong><?php echo get_sub_field('feature_title'); ?></strong> <br><?php echo get_sub_field('feature_texts'); ?></h6>
-					</div>
-				<?php endwhile; ?>
-			<?php endif; ?>
-		</div>
-	</div>
-
 	<div class="accordion" id="accordionPanelsStayOpenExample">
+		
 		<div class="accordion-item">
 			<h2 class="accordion-header">
 				<button class="accordion-button" type="button" data-bs-toggle="collapse"
-					data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-					aria-controls="panelsStayOpen-collapseOne">
-					Check Delivery
-				</button>
-			</h2>
-			<div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-				<div class="accordion-body">
-					<div class="block delivery">
-						<div class="card">
-							<div class="card-body">
-								<input type="text" class="form-control"
-									placeholder="Enter PIN Code">
-								<ul class="iconic_list">
-									<li><i class="bi bi-box-seam"></i> <strong>Express
-											delivery</strong> might be available</li>
-									<li><i class="bi bi-credit-card"></i> <strong>Pay on delivery
-											delivery</strong> might be available</li>
-									<li><i class="bi bi-arrow-left-right"></i> <strong>Hassle free
-											7, 15 and 30 days</strong> Return & Exchange might be
-										available</li>
-									<li><i class="bi bi-emoji-smile"></i> <strong>Try & Buy</strong>
-										might be available</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="accordion-item">
-			<h2 class="accordion-header">
-				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
 					data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
 					aria-controls="panelsStayOpen-collapseTwo">
 					Product Details
 				</button>
 			</h2>
-			<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+			<div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show">
 				<div class="accordion-body">
 					<div class="block p-details">
 					<?php do_action( 'woocommerce_product_meta_start' ); ?>

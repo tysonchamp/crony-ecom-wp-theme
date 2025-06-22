@@ -401,6 +401,13 @@
     <!-- catagory-slider -->
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
+    <script>
+    $('.stars a').on('click', function(e) {
+      e.preventDefault();
+      $('.stars a').removeClass('active');
+      $(this).addClass('active');
+    });
+    </script>
     <script type="text/javascript">
     $(document).ready(function() {
         $('.catagory-slider').slick({
