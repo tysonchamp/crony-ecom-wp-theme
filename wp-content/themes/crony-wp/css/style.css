@@ -1259,7 +1259,7 @@ footer .footer-bottom .copyright {
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 25px -5px rgba(0, 0, 0, 0.15);
-  min-height: 250px;
+  min-height: 260px;
 }
 .why-choose-us .feature .feature-icon {
   width: 70px;
@@ -4132,10 +4132,6 @@ del bdi {
 
 .woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
   background: #237068 !important;
-}
-
-.why-choose-us .feature {
-  min-height: 290px;
 }
 
 @media screen and (max-width: 767px) {
