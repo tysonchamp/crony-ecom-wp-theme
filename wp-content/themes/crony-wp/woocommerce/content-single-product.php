@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 }
 ?>
 	<div class="row">
-		<div class="col-lg-7 col-md-6">
+		<div class="col-lg-7 col-md-6 position-relative p-img">
 			<?php
 			/**
 			 * Hook: woocommerce_before_single_product_summary.
