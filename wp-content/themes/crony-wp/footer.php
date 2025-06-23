@@ -379,7 +379,7 @@
                                 </a></li>
                         </ul>
                     </div>
-                    <div class="copyright">© 2025 Crony Midi Lite. All Rights Reserved</div>
+                    <div class="copyright">© 2025 Crony Medi lite. All Rights Reserved</div>
                 </div>
             </div>
         </div>
