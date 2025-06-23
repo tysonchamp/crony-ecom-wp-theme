@@ -350,10 +350,10 @@ add_filter('the_generator', 'complete_version_removal');
 
 
 // customize admin footer text
-function custom_admin_footer() {
-	echo '<a href="http://www.tysonchamp.com/">Developed By Tyson Champ</a>';
-} 
-add_filter('admin_footer_text', 'custom_admin_footer');
+// function custom_admin_footer() {
+// 	echo '<a href="http://www.tysonchamp.com/">Developed By Tyson Champ</a>';
+// } 
+// add_filter('admin_footer_text', 'custom_admin_footer');
 
 
 // enable html markup in user profiles
