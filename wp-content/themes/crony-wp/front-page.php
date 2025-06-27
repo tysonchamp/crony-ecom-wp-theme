@@ -45,9 +45,10 @@ get_header();
                         <div class="col-lg-3 col-md-6 col-6">
                             <div class="d-flex align-items-center gap-3">
                                 <div class="left">
-                                    <div class="icon">
+                                    <!-- <div class="icon">
                                         <i class="fa <?php echo get_sub_field('feature_icon'); ?>"></i>
-                                    </div>
+                                    </div> -->
+                                    <div class="img-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/free-shipping-icon.png"></div>
                                 </div>
                                 <div class="right">
                                     <div class="title"><?php echo get_sub_field('feature_title'); ?></div>
@@ -64,7 +65,7 @@ get_header();
     <!-- Top Selling Products Section -->
     <section class="fluid-block top-selling-products">
         <div class="container">
-            <div class="title-div text-center mb-5">
+            <div class="title-div text-center mb-4">
                 <h2 class="fw-bold display-5 mb-0"><?php echo get_field('product_title'); ?></h2>
                 <p class="text-muted mb-2"><?php echo get_field('product_subtitle'); ?></p>
             </div>
@@ -75,7 +76,7 @@ get_header();
                         <?php while(have_rows('all_products')): the_row(); ?>
                             <?php $select_products = get_sub_field('select_product'); ?>
                             <div class="col-lg-6 col-md-6 col-sm-6">
-                                <div class="card square-img border-0 rounded-5 overflow-hidden position-relative">
+                                <div class="card square-img border-0 rounded-5 overflow-hidden position-relative shadow">
                                     <div class="caption">
                                         <a href="<?php echo get_the_permalink($select_products->ID); ?>" class="card-title fs-3 fw-bold mb-2"><?php echo $select_products->post_title; ?></a>
                                         <div class="price">
@@ -94,16 +95,15 @@ get_header();
         </div>
     </section>
     <!-- Top Selling Products Section -->
-    <section class="fluid-block about-section py-0">
+    <section class="fluid-block about-section py-0 eye-catchy-bg">
         <div class="container">
             <div class="row g-5 ">
                 <div class="col-lg-6">
                     <div class="about-content">
-                        <div class="title-div mb-4">
+                        <div class="title-div">
                             <h2 class="fw-bold mb-0 text-uppercase"><?php echo get_field('about_title'); ?></h2>
                             <p class="text-muted mb-2 fs-5"><?php echo get_field('about_subtitle'); ?></p>
                         </div>
-                        <h2 class="fw-bold display-5 mb-3"></h2>
                         <div class="text-muted mb-4"><?php echo get_field('about_texts'); ?></div>
                         <a href="<?php echo get_page_link(121); ?>" class="btn btn-primary mt-3">Read More <i class="bi bi-chevron-right"></i></a>
                     </div>
@@ -119,7 +119,7 @@ get_header();
     <!-- About Section -->
     <section class="why-choose-us">
         <div class="container">
-            <div class="title-div text-center mb-5">
+            <div class="title-div text-center mb-4">
                 <h2 class="fw-bold mb-0 text-uppercase"><?php echo get_field('why_us_title'); ?></h2>
                 <p class="text-muted mb-2 fs-5"><?php echo get_field('why_us_subtitle'); ?></p>
             </div>
@@ -129,9 +129,10 @@ get_header();
                         <?php while(have_rows('why_us_reasons')): the_row(); ?>
                             <div class="col-lg-3 col-md-3 col-sm-6">
                                 <div class="feature col p-4 rounded-4">
-                                    <div class="feature-icon d-inline-flex align-items-center text-bg-primary bg-gradient fs-2 mb-3">
+                                    <!-- <div class="feature-icon d-inline-flex align-items-center text-bg-primary bg-gradient fs-2 mb-3">
                                         <i class="fa <?php echo get_sub_field('why_us_icon'); ?>"></i>
-                                    </div>
+                                    </div> -->
+                                    <div class="img-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/free-shipping-icon.png"></div>
                                     <h3 class="text-body-emphasis"><?php echo get_sub_field('why_us_title'); ?></h3>
                                     <p><?php echo get_sub_field('why_us_texts'); ?></p>
                                 </div>
