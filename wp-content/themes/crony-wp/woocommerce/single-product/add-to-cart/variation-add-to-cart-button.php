@@ -32,7 +32,7 @@ global $product;
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</div>
-	<a href="https://wa.me/919876543210" class="whatsapp-chat-btn" target="_blank" rel="noopener">
+	<a href="https://wa.me/<?php echo get_field('whatsapp_no', 'option'); ?>?text=<?php the_title(); ?>" class="whatsapp-chat-btn" target="_blank" rel="noopener">
 		<i class="fa-brands fa-whatsapp"></i>
 		<span>
 			<!-- <span class="wa-agent">Bhoomi <span class="wa-online">Online</span></span><br> -->

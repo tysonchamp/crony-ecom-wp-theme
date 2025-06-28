@@ -25,7 +25,7 @@
     <!-- Newsletter Section End -->
 
     <footer>
-        <a href="https://wa.me/919876543210" class="floating-icon whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <a href="https://wa.me/<?php echo get_field('whatsapp_no', 'option'); ?>?text=Hi! Tell me more about your products." class="floating-icon whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp" style="font-size:36px;color:#fff;"></i>
         </a>
         <div class="footer-top">
@@ -35,10 +35,13 @@
                         <div class="link-wrap">
                             <h5>Contact Us</h5>
                             <p><strong>Crony Medi Lite</strong><br>
-                            No.4/578, 1st Floor Vinayakapuram 5th Cross Bagalur Road, Hosur</p>
+                            <?php echo get_field('address', 'option'); ?></p>
                             <ul>
                                 <li class="d-flex align-items-center"><i class="bi bi-envelope"></i><a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a></li>
                                 <li class="d-flex align-items-center"><i class="bi bi-telephone"></i><a href="tel:<?php echo get_field('phone_number', 'option'); ?>"><?php echo get_field('phone_number', 'option'); ?></a></li>
+                                <li class="d-flex align-items-center"><i class="bi bi-pin-map"></i>
+                                    <a href="<?php echo get_field('google_map_url', 'option'); ?>" id="chatWithUsBtn">View Map</a>
+                                </li>
                                 <li class="d-flex align-items-center"><i class="bi bi-chat-right-text"></i>
                                     <a href="#" id="chatWithUsBtn">Chat with Us</a>
                                 </li>

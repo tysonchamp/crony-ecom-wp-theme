@@ -21,7 +21,8 @@ get_header('inner');
         <div class="container">
             <div class="row g-5 col-lg-10 mx-auto">
                 <div class="col-lg-12">
-                    <iframe class="mb-5 rounded-5 overflow-hidden" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d37024.85381223106!2d77.80026696742692!3d12.729181025381529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo.4%2F578%2C%201st%20Floor%20Vinayakapuram%205th%20Cross%20Bagalur%20Road%2C%20Hosur!5e0!3m2!1sen!2sin!4v1751112379107!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <!-- <iframe class="mb-5 rounded-5 overflow-hidden" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d37024.85381223106!2d77.80026696742692!3d12.729181025381529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo.4%2F578%2C%201st%20Floor%20Vinayakapuram%205th%20Cross%20Bagalur%20Road%2C%20Hosur!5e0!3m2!1sen!2sin!4v1751112379107!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                    <?php echo get_field('google_map_iframe'); ?>
                 </div>
                 <div class="col-lg-6">
                     <div class="caption">

@@ -48,7 +48,7 @@ get_header();
                                     <!-- <div class="icon">
                                         <i class="fa <?php echo get_sub_field('feature_icon'); ?>"></i>
                                     </div> -->
-                                    <div class="img-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/free-shipping-icon.png"></div>
+                                    <div class="img-icon"><img src="<?php echo get_sub_field('feature_icon'); ?>"></div>
                                 </div>
                                 <div class="right">
                                     <div class="title"><?php echo get_sub_field('feature_title'); ?></div>
@@ -132,7 +132,7 @@ get_header();
                                     <!-- <div class="feature-icon d-inline-flex align-items-center text-bg-primary bg-gradient fs-2 mb-3">
                                         <i class="fa <?php echo get_sub_field('why_us_icon'); ?>"></i>
                                     </div> -->
-                                    <div class="img-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/free-shipping-icon.png"></div>
+                                    <div class="img-icon"><img src="<?php echo get_sub_field('why_us_icon'); ?>"></div>
                                     <h3 class="text-body-emphasis"><?php echo get_sub_field('why_us_title'); ?></h3>
                                     <p><?php echo get_sub_field('why_us_texts'); ?></p>
                                 </div>
