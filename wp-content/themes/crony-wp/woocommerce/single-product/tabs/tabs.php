@@ -30,7 +30,7 @@ $product_tabs = apply_filters( 'woocommerce_product_tabs', array() ); ?>
 </section>
 <?php if ( ! empty( $product_tabs ) ) : ?>
 <section class="customer-review">
-	<div class="container col-lg-7 mx-auto">
+	<div class="container">
 		<div class="woocommerce-tabs wc-tabs-wrapper">
 			<ul class="nav nav-tabs tabs wc-tabs" role="tablist">
 				<?php foreach ( $product_tabs as $key => $product_tab ) : ?>
