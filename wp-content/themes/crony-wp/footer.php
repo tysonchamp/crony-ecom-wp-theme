@@ -23,7 +23,11 @@
         </div>
     </section>
     <!-- Newsletter Section End -->
+
     <footer>
+        <a href="https://wa.me/919876543210" class="floating-icon whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp" style="font-size:36px;color:#fff;"></i>
+        </a>
         <div class="footer-top">
             <div class="container">
                 <div class="row g-5">

@@ -46,7 +46,7 @@ get_header('inner');
                 <?php if(have_rows('content_section')): ?>
                     <?php while(have_rows('content_section')): the_row(); ?>
                         <div class="col-lg-4 content-column">
-                            <div class="card rounded-5">
+                            <div class="card bg-col rounded-5">
                                 <div class="card-body p-5 text mb-0">
                                     <h4 class="card-title fw-bold mb-4 text-dark fs-3"><?php echo get_sub_field('content_title'); ?></h4>
                                     <?php echo get_sub_field('content_texts'); ?>

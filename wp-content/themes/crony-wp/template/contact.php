@@ -19,21 +19,26 @@ get_header('inner');
     </section>
     <section class="fluid-block contact-block">
         <div class="container">
-            <div class="row col-lg-10 mx-auto">
+            <div class="row g-5 col-lg-10 mx-auto">
+                <div class="col-lg-12">
+                    <iframe class="mb-5 rounded-5 overflow-hidden" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d37024.85381223106!2d77.80026696742692!3d12.729181025381529!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNo.4%2F578%2C%201st%20Floor%20Vinayakapuram%205th%20Cross%20Bagalur%20Road%2C%20Hosur!5e0!3m2!1sen!2sin!4v1751112379107!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
                 <div class="col-lg-6">
                     <div class="caption">
-                        <div class="title-div mb-5">
-                            <h2 class="fw-bold display-5 mb-0 fs-2">Contact Details</h2>
-                        </div>
                         <!-- <p class="fs-4">Akshya Nagar 1st Block 1st Cross, Rammurthy nagar, Bangalore-560016.</p> -->
-                        <p class="fs-5 mb-4"><?php echo get_field('address', 'option'); ?></p>
-                        <div class="contact-item d-flex align-items-center mb-3">
-                            <div class="icon"><i class="bi bi-telephone"></i></div>
-                            <a href="tel:<?php echo get_field('phone_number', 'option'); ?>"><?php echo get_field('phone_number', 'option'); ?></a>
-                        </div>
-                        <div class="contact-item d-flex align-items-center">
-                            <div class="icon"><i class="bi bi-envelope"></i></div>
-                            <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a>
+                        <div class="p-5 bg-col rounded-5">
+                            <div class="title-div mb-5">
+                                <h2 class="fw-bold display-5 mb-0 fs-2">Contact Details</h2>
+                            </div>
+                            <p class="fs-5 mb-4"><?php echo get_field('address', 'option'); ?></p>
+                            <div class="contact-item d-flex align-items-center mb-3">
+                                <div class="icon"><i class="bi bi-telephone"></i></div>
+                                <a href="tel:<?php echo get_field('phone_number', 'option'); ?>"><?php echo get_field('phone_number', 'option'); ?></a>
+                            </div>
+                            <div class="contact-item d-flex align-items-center">
+                                <div class="icon"><i class="bi bi-envelope"></i></div>
+                                <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -61,6 +66,7 @@ get_header('inner');
                         <button class="btn btn-primary">Submit</button>
                     </form>
                 </div>
+                
             </div>
         </div>
     </section>

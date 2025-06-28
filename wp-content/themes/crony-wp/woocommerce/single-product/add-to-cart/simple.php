@@ -55,7 +55,13 @@ if ( $product->is_in_stock() ) : ?>
 	</form>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
-	
+	<a href="https://wa.me/919876543210" class="whatsapp-chat-btn" target="_blank" rel="noopener">
+		<i class="fa-brands fa-whatsapp"></i>
+		<span>
+			<!-- <span class="wa-agent">Bhoomi <span class="wa-online">Online</span></span><br> -->
+			<strong>Need Help? Chat with us</strong>
+		</span>
+	</a>
 	<div class="accordion" id="accordionPanelsStayOpenExample">
 		
 		<div class="accordion-item">
@@ -88,3 +94,5 @@ if ( $product->is_in_stock() ) : ?>
 		</div>
 	</div>
 <?php endif; ?>
+
+<div><div>

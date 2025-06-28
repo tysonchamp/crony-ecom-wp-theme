@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 get_header( 'shop' ); ?>
 
 <section class="product-details pb-5">
-	<div class="container col-lg-7 mx-auto">
+	<div class="container">
 			<!-- <ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#">Home</a></li>
 				<li class="breadcrumb-item"><a href="#">Library</a></li>

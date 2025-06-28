@@ -4285,4 +4285,156 @@ del bdi {
 }
 .nav-item.current .nav-link {
   color: #237068 !important;
+}
+
+.about-main .title-div {
+  padding-bottom: 0 !important;
+  margin-bottom: 2rem !important;
+}
+.about-main .content-column {
+  margin-bottom: 0 !important;
+}
+.about-main .bg-col {
+  background: #f4f8f7;
+  border-color: #237068;
+  min-height: 540px;
+}
+.about-main .bg-col p {
+  line-height: 28px;
+}
+.about-main .bg-col h4 {
+  color: #237068;
+}
+
+.contact-block .title-div {
+  padding-bottom: 0;
+}
+.contact-block .bg-col {
+  background: #f4f8f7;
+  border-color: #237068;
+  min-height: 480px;
+}
+
+.preview-image-wrapper {
+  box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
+  border-radius: 20px !important;
+  overflow: hidden;
+}
+
+.generic-content ul, .generic-content ol, .product-details .right-panel ul, .product-details .right-panel ol, .woocommerce-Tabs-panel--description ul, .woocommerce-Tabs-panel--description ol {
+  margin: 20px 0 0 15px !important;
+}
+.generic-content ul li, .generic-content ol li, .product-details .right-panel ul li, .product-details .right-panel ol li, .woocommerce-Tabs-panel--description ul li, .woocommerce-Tabs-panel--description ol li {
+  list-style: disc !important;
+  margin-bottom: 7px;
+  font-size: 1rem !important;
+}
+.generic-content p, .product-details .right-panel p, .woocommerce-Tabs-panel--description p {
+  margin: 15px 0;
+  font-size: 1rem !important;
+}
+
+.product-details .right-panel .caption {
+  margin-bottom: 2.5rem !important;
+}
+
+.product-details .thumbs-wrapper > div {
+  border-color: #d2d3d7;
+  aspect-ratio: 1/1;
+  border-radius: 15px !important;
+}
+
+.product-details .thumbs-wrapper > div.active {
+  border-color: #237068 !important;
+}
+
+.product-details .preview-image-wrapper {
+  aspect-ratio: 1/1;
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 9999;
+  background: #25d366;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  animation: whatsapp-pop 0.5s;
+  width: 55px;
+  height: 55px;
+}
+
+.whatsapp-float:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  transform: scale(1.08);
+}
+
+@keyframes whatsapp-pop {
+  0% {
+    transform: scale(0.7);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.whatsapp-chat-btn {
+  display: flex;
+  align-items: center;
+  background: #25d366;
+  color: #fff !important;
+  border-radius: 40px;
+  padding: 10px 25px 10px 25px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none !important;
+  transition: box-shadow 0.2s, transform 0.2s;
+  margin: 18px 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 260px;
+}
+
+.whatsapp-chat-btn i.fa-whatsapp {
+  font-size: 36px;
+  margin-right: 14px;
+}
+
+.whatsapp-chat-btn .wa-agent {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.whatsapp-chat-btn .wa-online {
+  background: #fff;
+  color: #25d366;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 1px 7px;
+  margin-left: 4px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.whatsapp-chat-btn strong {
+  font-size: 16px;
+  font-weight: 700;
+  display: block;
+  margin-top: 2px;
+}
+
+.whatsapp-chat-btn:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transform: scale(1.03);
+  color: #fff !important;
 }/*# sourceMappingURL=style.css.map */
