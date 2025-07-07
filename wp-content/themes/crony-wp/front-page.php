@@ -187,11 +187,11 @@ get_header();
                             $postData->the_post();
                 ?>
                         <div class="col-lg-3 col-md-6">
-                            <a href="<?php the_permalink(); ?>" class="card border-0 rounded-0">
+                            <a href="<?php the_permalink(); ?>" class="card border-0 rounded-4 overflow-hidden shadow-lg">
                                 <div class="card-img">
                                     <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="" class="img-fluid rounded-4">
                                 </div>
-                                <div class="card-body p-0 py-4">
+                                <div class="card-body p-3">
                                     <div class="info">
                                         <p><?php the_title(); ?></p>
                                         <div class="date mt-3 d-flex align-items-center gap-2"><i class="fa-light fa-calendar"></i> <?php the_date('F j, Y'); ?></div>

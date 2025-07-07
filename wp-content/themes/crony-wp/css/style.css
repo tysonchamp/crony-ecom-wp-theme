@@ -1929,8 +1929,8 @@ footer .footer-bottom .copyright {
 
 .blog-details ul,
 ol {
-  margin: 10px 0 30px !important;
-  margin-left: 25px !important;
+  margin: 10px 0 30px;
+  margin-left: 25px;
 }
 
 .blog-details li {
@@ -4318,7 +4318,6 @@ del bdi {
 .preview-image-wrapper {
   box-shadow: 0 5px 30px -5px rgba(0, 0, 0, 0.2);
   border-radius: 20px !important;
-  overflow: hidden;
 }
 
 .generic-content ul, .generic-content ol, .product-details .right-panel ul, .product-details .right-panel ol, .woocommerce-Tabs-panel--description ul, .woocommerce-Tabs-panel--description ol {
@@ -4455,4 +4454,45 @@ del bdi {
   .mobile-view {
     display: block;
   }
+}
+.order_details {
+  display: inline-block !important;
+  width: 100%;
+  border-right: solid 1px #eee !important;
+  margin-right: 30px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.order_details li {
+  display: inline-block !important;
+  width: 100% !important;
+  margin-bottom: 15px;
+  border: none !important;
+}
+
+#btn-razorpay {
+  padding: 0.5rem 1.5rem !important;
+  border-radius: 10px !important;
+  border: none !important;
+  background: #deebea !important;
+  color: #237068 !important;
+  transition: all 0.2s ease-out;
+  margin-bottom: 0.6rem !important;
+}
+#btn-razorpay:hover {
+  background: #237068 !important;
+  color: #fff !important;
+}
+
+#btn-razorpay-cancel {
+  padding: 0.3rem 1.5rem !important;
+  border-radius: 10px !important;
+  border: solid 1px #237068 !important;
+  color: #237068 !important;
+  background: #fff !important;
+  transition: all 0.2s ease-out;
+}
+#btn-razorpay-cancel:hover {
+  background: #237068 !important;
+  color: #fff !important;
 }/*# sourceMappingURL=style.css.map */
