@@ -189,7 +189,7 @@ get_header();
                         <div class="col-lg-3 col-md-6">
                             <a href="<?php the_permalink(); ?>" class="card border-0 rounded-0">
                                 <div class="card-img">
-                                    <img src="<?php echo ""; ?>" alt="" class="img-fluid rounded-4">
+                                    <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'full'); ?>" alt="" class="img-fluid rounded-4">
                                 </div>
                                 <div class="card-body p-0 py-4">
                                     <div class="info">

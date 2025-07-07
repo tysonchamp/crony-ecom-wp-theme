@@ -4837,3 +4837,21 @@ del bdi {
     transform: scale(1.03);
     color: #fff !important;
 }
+
+/* Add this CSS to your stylesheet */
+.desktop-view {
+  display: block;
+}
+
+.mobile-view {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .desktop-view {
+    display: none;
+  }
+  .mobile-view {
+    display: block;
+  }
+}

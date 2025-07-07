@@ -1,4 +1,3 @@
-
     <!-- Testimonial Section End -->
     <section class="fluid-block newsletter py-0">
         <div class="container">
@@ -37,21 +36,28 @@
                             <p><strong>Crony Medi Lite</strong><br>
                             <?php echo get_field('address', 'option'); ?></p>
                             <ul>
-                                <li class="d-flex align-items-center"><i class="bi bi-envelope"></i><a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-telephone"></i><a href="tel:<?php echo get_field('phone_number', 'option'); ?>"><?php echo get_field('phone_number', 'option'); ?></a></li>
-                                <li class="d-flex align-items-center"><i class="bi bi-pin-map"></i>
-                                    <a href="<?php echo get_field('google_map_url', 'option'); ?>" id="chatWithUsBtn">View Map</a>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-envelope"></i>
+                                    <a href="mailto:<?php echo get_field('email_address', 'option'); ?>"><?php echo get_field('email_address', 'option'); ?></a>
                                 </li>
-                                <li class="d-flex align-items-center"><i class="bi bi-chat-right-text"></i>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-telephone"></i>
+                                    <a href="tel:<?php echo get_field('phone_number', 'option'); ?>"><?php echo get_field('phone_number', 'option'); ?></a>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-pin-map"></i>
+                                    <a href="<?php echo get_field('google_map_url', 'option'); ?>">View Map</a>
+                                </li>
+                                <!-- <li class="d-flex align-items-center"><i class="bi bi-chat-right-text"></i>
                                     <a href="#" id="chatWithUsBtn">Chat with Us</a>
-                                </li>
+                                </li> -->
                             </ul>
                             <!-- Chat Box HTML (hidden by default) -->
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="link-wrap">
-                            <h5>Useful links</h5>
+                            <h5>Quick links</h5>
                             <!-- <ul>
                                 <li><a href="#">Delivery Information</a></li>
                                 <li><a href="#">International Shipping</a></li>
@@ -76,7 +82,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="link-wrap">
-                            <h5>Information</h5>
+                            <h5>Policies</h5>
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location'    => 'footer_menu1',
@@ -297,90 +303,49 @@
     <!------------------ Scripts Import -------------------------->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/slider.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/customize.js"></script>
     <!-- catagory-slider -->
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
+
+    <script>
+        (function () {
+            const quantityContainer = document.querySelector(".quantity");
+            const minusBtn = quantityContainer.querySelector(".minus");
+            const plusBtn = quantityContainer.querySelector(".plus");
+            const inputBox = quantityContainer.querySelector(".input-box");
+
+            minusBtn.addEventListener("click", () => {
+                if (parseInt(inputBox.value) > 1) {
+                    inputBox.value = parseInt(inputBox.value) - 1;
+                } else {
+                    inputBox.value = 1;
+                }
+            });
+
+            plusBtn.addEventListener("click", () => {
+                inputBox.value = parseInt(inputBox.value) + 1;
+            });
+
+            inputBox.addEventListener("change", () => {
+                if (parseInt(inputBox.value) < 1) {
+                    inputBox.value = 1;
+                }
+            });
+
+            inputBox.addEventListener("keyup", () => {
+                if (parseInt(inputBox.value) < 1) {
+                    inputBox.value = 1;
+                }
+            });
+        })();
+    </script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/slider.js"></script>
     <script>
     $('.stars a').on('click', function(e) {
       e.preventDefault();
       $('.stars a').removeClass('active');
       $(this).addClass('active');
-    });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.catagory-slider').slick({
-            dots: true,
-            arrows: false,
-            infinite: true,
-            speed: 300,
-            margin: 10,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }
-            ]
-        });
-    });
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.catagory-slider-2').slick({
-            dots: false,
-            arrows: false,
-            infinite: true,
-            speed: 200,
-            margin: 10,
-            slidesToShow: 5,
-            slidesToScroll: 5,
-            responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4,
-                        infinite: true,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                }
-            ]
-        });
     });
     </script>
     <!-- Search Input Animation -->
@@ -443,16 +408,6 @@
     input.addEventListener('focus', () => animDiv.style.opacity = '0');
     input.addEventListener('blur', () => animDiv.style.opacity = '1');
     </script>
-    <!-- Chat Box -->
-    <script>
-    document.getElementById('chatWithUsBtn').addEventListener('click', function(e) {
-        e.preventDefault();
-        document.getElementById('customChatBox').style.display = 'block';
-    });
-    document.querySelector('.close-chatbox').addEventListener('click', function() {
-        document.getElementById('customChatBox').style.display = 'none';
-    });
-    </script>
     <!-- Loader Script -->
     <script>
     window.addEventListener('DOMContentLoaded', function() {
@@ -466,99 +421,6 @@
     });
     </script>
     <!-- Offer Count Down -->
-    <script>
-    // Set your offer end date/time here (YYYY-MM-DDTHH:MM:SS)
-    const offerEnd = new Date('2025-12-31T23:59:59').getTime();
-
-    function updateCountdown() {
-        const now = new Date().getTime();
-        let distance = offerEnd - now;
-
-        if (distance < 0) distance = 0;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        document.getElementById('days').textContent = String(days).padStart(2, '0');
-        document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-        document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-        document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    // Animate on change (optional, for a smooth effect)
-    function animateChange(id, newValue) {
-        const el = document.getElementById(id);
-        if (el.textContent !== newValue) {
-            el.classList.add('count-animate');
-            setTimeout(() => el.classList.remove('count-animate'), 300);
-        }
-        el.textContent = newValue;
-    }
-
-    // Optional: Add this CSS for a simple pop animation
-    const style = document.createElement('style');
-    style.innerHTML = `
-    .count-animate {
-        animation: pop 0.3s;
-    }
-    @keyframes pop {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.25); }
-        100% { transform: scale(1); }
-    }
-    `;
-    document.head.appendChild(style);
-
-    // Use animation in updateCountdown
-    function updateCountdownAnimated() {
-        const now = new Date().getTime();
-        let distance = offerEnd - now;
-
-        if (distance < 0) distance = 0;
-
-        const days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
-        const hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
-        const minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
-        const seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
-
-        animateChange('days', days);
-        animateChange('hours', hours);
-        animateChange('minutes', minutes);
-        animateChange('seconds', seconds);
-    }
-
-    updateCountdownAnimated();
-    setInterval(updateCountdownAnimated, 1000);
-    </script>
-    <!-- Blog Carousel In Mobile -->
-    <script>
-    $(document).ready(function() {
-        function initBlogCarousel() {
-            if ($(window).width() < 767) {
-                if (!$('.blog-carousel').hasClass('slick-initialized')) {
-                    $('.blog-carousel').slick({
-                        dots: true,
-                        arrows: false,
-                        infinite: true,
-                        speed: 300,
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    });
-                }
-            } else {
-                if ($('.blog-carousel').hasClass('slick-initialized')) {
-                    $('.blog-carousel').slick('unslick');
-                }
-            }
-        }
-        initBlogCarousel();
-        $(window).on('resize', function() {
-            initBlogCarousel();
-        });
-    });
-    </script>
     <!-- Brand Carousel -->
     <script>
     $(document).ready(function() {
