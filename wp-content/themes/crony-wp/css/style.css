@@ -625,6 +625,7 @@ header .nav-link.dropdown-toggle.show {
 
 .features {
   background: #f4f8f7;
+  line-height: 1.3rem;
 }
 .features .col-lg-3 .icon {
   width: 68px;
@@ -649,9 +650,9 @@ header .nav-link.dropdown-toggle.show {
   width: 100%;
 }
 .features .col-lg-3 .title {
-  font-size: 21px;
+  font-size: 18px;
   color: #1c1d23;
-  margin-bottom: 2px;
+  margin-bottom: 10px;
   font-weight: 600;
 }
 .features .col-lg-3 small {
