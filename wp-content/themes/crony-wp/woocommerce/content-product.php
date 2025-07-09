@@ -24,7 +24,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
 ?>
-<div class="col-lg-3 col-md-3 col-6">
+<div class="col-lg-3 col-md-3">
 	<div class="card border-0 rounded-4 shadow-lg">
 		<a href="<?php the_permalink(); ?>" class="card-img">
 			<img src="<?php echo esc_url( $product->get_image_id() ? wp_get_attachment_image_url( $product->get_image_id(), 'full' ) : wc_placeholder_img_src() ); ?>" alt="" class="img-fluid square-img">

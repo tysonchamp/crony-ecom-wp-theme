@@ -55,8 +55,8 @@ get_header(); ?>
                                                     <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                     <div class="blog-info">
                                                         <ul>
-                                                            <li><strong><?php the_author(); ?></strong></li>
-                                                            <li><?php the_date('F j, Y'); ?></li>
+                                                            <!-- <li><strong><?php the_author(); ?></strong></li> -->
+                                                            <!-- <li><?php the_date('F j, Y'); ?></li> -->
                                                         </ul>
                                                     </div>
                                                     <div class="limit" data-max-characters="142">

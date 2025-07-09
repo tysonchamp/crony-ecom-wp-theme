@@ -46,7 +46,7 @@ get_header('inner');
                 <div class="col-lg-6">
                     <form class="contact-form">
                         <div class="title-div mb-5">
-                            <h2 class="fw-bold display-5 mb-0 fs-2">Get a free quote</h2>
+                            <h2 class="fw-bold display-5 mb-0 fs-2">Get in Touch With Us</h2>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">

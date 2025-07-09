@@ -8,11 +8,15 @@ $home_id = $post->ID;
 get_header();
 ?>    
     <section class="banner-section">
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <?php if(have_rows('theme_slider','option')): ?>
+                    <?php $sliderCount = 0; ?>
+                    <?php while(have_rows('theme_slider','option')): the_row(); ?>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?php echo $sliderCount; ?>" class="<?php echo ($sliderCount == 0 ? 'active' : ''); ?>" aria-current="<?php echo ($sliderCount == 0 ? 'true' : ''); ?>" aria-label="Slide <?php echo $sliderCount; ?>"></button>
+                       <?php $sliderCount++; ?>
+                    <?php endwhile; ?>
+                <?php endif; ?>
             </div>
             <div class="carousel-inner">
                 <?php if(have_rows('theme_slider','option')): ?>
@@ -75,12 +79,14 @@ get_header();
                     <?php if(have_rows('all_products')): ?>
                         <?php while(have_rows('all_products')): the_row(); ?>
                             <?php $select_products = get_sub_field('select_product'); ?>
+                            <?php $product = wc_get_product($select_products->ID);  ?>
                             <div class="col-lg-6 col-md-6 col-sm-6">
                                 <div class="card square-img border-0 rounded-5 overflow-hidden position-relative shadow">
                                     <div class="caption">
                                         <a href="<?php echo get_the_permalink($select_products->ID); ?>" class="card-title fs-3 fw-bold mb-2"><?php echo $select_products->post_title; ?></a>
                                         <div class="price">
-                                            <?php echo get_woocommerce_currency_symbol(). ' ' .get_post_meta($select_products->ID, '_price', true); ?>
+                                            <!-- <?php echo get_woocommerce_currency_symbol(). ' ' .get_post_meta($select_products->ID, '_price', true); ?> -->
+                                            <?php echo $product->get_price_html(); ?>
                                         </div>
                                         <a href="<?php echo get_the_permalink($select_products->ID); ?>" class="d-flex align-items-center gap-2 btn btn-primary mt-4">Shop Now <i class="bi bi-chevron-right"></i></a>
                                     </div>

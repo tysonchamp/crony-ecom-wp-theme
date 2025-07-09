@@ -1,5 +1,5 @@
     <!-- Testimonial Section End -->
-    <section class="fluid-block newsletter py-0">
+    <!-- <section class="fluid-block newsletter py-0">
         <div class="container">
             <div class="row align-items-center py-5">
                 <div class="col-lg-4 col-md-5 mb-3 mb-md-0">
@@ -20,9 +20,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- Newsletter Section End -->
-
     <footer>
         <a href="https://wa.me/<?php echo get_field('whatsapp_no', 'option'); ?>?text=Hi! Tell me more about your products." class="floating-icon whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
             <i class="fa-brands fa-whatsapp" style="font-size:36px;color:#fff;"></i>
@@ -458,8 +457,10 @@
     $(document).ready(function() {
         $('.testimonial-slider').slick({
             dots: true,
+            autoplay: true,
             arrows: true,
             infinite: true,
+            autoplaySpeed: 2000,
             speed: 400,
             slidesToShow: 1,
             slidesToScroll: 1,
