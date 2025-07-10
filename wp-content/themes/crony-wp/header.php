@@ -31,7 +31,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/slick.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/slick-theme.css" />
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/product-slider.css" />
+    <!-- <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/product-slider.css" /> -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.min.css" />
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/main.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
 </head>
 <body>

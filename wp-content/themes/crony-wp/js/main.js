@@ -5,6 +5,9 @@ $('.gallery-parent').each(function () {
   let thumbs = $(this).children('.gallery-thumbs'),
     top = $(this).children('.gallery-top');
 
+  // Exit if elements are not found to prevent errors
+  if (thumbs.length === 0 || top.length === 0) return;
+
   // activation carousel plugin
   let galleryThumbs = new Swiper(thumbs, {
     spaceBetween: 5,
@@ -42,4 +45,4 @@ $('.gallery-parent').each(function () {
 });
 
 // activation zoom plugin
-let $easyzoom = $('.easyzoom').easyZoom();
+// let $easyzoom = $('.easyzoom').easyZoom();

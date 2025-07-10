@@ -4496,4 +4496,105 @@ del bdi {
 #btn-razorpay-cancel:hover {
   background: #237068 !important;
   color: #fff !important;
+}
+
+.product-carousel {
+  width: 100%;
+}
+.product-carousel .slick-slider {
+  margin-top: 0px;
+}
+.product-carousel .slick-prev {
+  left: 40px;
+}
+.product-carousel .slick-next {
+  right: 40px;
+}
+
+.thumbnail-slider {
+  display: inline-block;
+  width: 100%;
+  margin-top: 40px;
+  display: inline-block;
+}
+.thumbnail-slider .thumb-item {
+  width: 100%;
+  border-radius: 15px !important;
+  overflow: hidden;
+  border: solid 2px #eee;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thumbnail-slider .thumb-item img {
+  width: 100%;
+}
+
+.main-slider {
+  width: 100% !important;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 20px !important;
+}
+.main-slider .slider-item {
+  border-radius: 15px !important;
+  overflow: hidden !important;
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-slider .slider-item img {
+  width: 100%;
+  border-radius: 15px;
+  border: solid 2px #d2d3d7;
+}
+.main-slider .slick-slide img {
+  width: 100% !important;
+  border-radius: 15px;
+}
+.main-slider .slick-slide {
+  margin-bottom: 20px;
+}
+.main-slider iframe {
+  width: 100% !important;
+  border-radius: 15px;
+  border: solid 2px #d2d3d7;
+  aspect-ratio: 1/1;
+}
+
+.slick-current {
+  border-color: #237068 !important;
+}
+
+@media (max-width: 768px) {
+  .main-slider {
+    margin: auto !important;
+  }
+  .p-listing .row > * {
+    padding-right: 0 !important;
+  }
+  .fluid-block {
+    padding: 1.5rem 0;
+  }
+}
+.video-thumbnail {
+  position: relative;
+}
+.video-thumbnail::before {
+  position: absolute;
+  content: "\f4f2";
+  font-family: bootstrap-icons;
+  font-size: 2rem;
+  color: #fff;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: rgba(35, 112, 104, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */

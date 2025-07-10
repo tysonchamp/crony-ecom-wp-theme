@@ -300,13 +300,13 @@
         </div>
     </div> -->
     <!------------------ Scripts Import -------------------------->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/customize.js"></script>
-    <!-- catagory-slider -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/slick.min.js"></script>
-
+    <script src="<?php echo get_template_directory_uri(); ?>/js/customize.js"></script>
+    <!-- Product Slider -->
+    <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script> -->
+    <!-- <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script> -->
     <script>
         (function () {
             const quantityContainer = document.querySelector(".quantity");
@@ -339,120 +339,13 @@
             });
         })();
     </script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/slider.js"></script>
     <script>
     $('.stars a').on('click', function(e) {
-      e.preventDefault();
-      $('.stars a').removeClass('active');
-      $(this).addClass('active');
+        e.preventDefault();
+        $('.stars a').removeClass('active');
+        $(this).addClass('active');
     });
     </script>
-    <!-- Search Input Animation -->
-    <script>
-    const placeholders = [
-        "What you are looking for?",
-        "Search for products",
-        "Find your favorite items",
-        "Explore our collection",
-        "Search for anything",
-    ];
-    let phIndex = 0;
-    const input = document.getElementById('searchInput');
-
-    // Create animated placeholder div
-    let animDiv = document.createElement('div');
-    animDiv.className = 'animated-placeholder';
-    document.body.appendChild(animDiv);
-
-    function positionAnimDiv() {
-        const rect = input.getBoundingClientRect();
-        animDiv.style.left = (rect.left + window.scrollX) + 'px';
-        animDiv.style.top = (rect.top + window.scrollY) + 'px';
-        animDiv.style.width = rect.width + 'px';
-        animDiv.style.height = rect.height + 'px';
-        animDiv.style.lineHeight = window.getComputedStyle(input).lineHeight || rect.height + 'px';
-        animDiv.style.fontSize = window.getComputedStyle(input).fontSize;
-        animDiv.style.fontFamily = window.getComputedStyle(input).fontFamily;
-        animDiv.style.paddingLeft = window.getComputedStyle(input).paddingLeft;
-    }
-    positionAnimDiv();
-    window.addEventListener('resize', positionAnimDiv);
-    window.addEventListener('scroll', positionAnimDiv);
-
-    function typePlaceholder(text, i = 0) {
-        animDiv.textContent = text.slice(0, i);
-        input.setAttribute('placeholder', animDiv.textContent);
-        if (i <= text.length) {
-            setTimeout(() => typePlaceholder(text, i + 1), 60);
-        } else {
-            setTimeout(() => erasePlaceholder(text), 1200);
-        }
-    }
-
-    function erasePlaceholder(text, i = text.length) {
-        animDiv.textContent = text.slice(0, i);
-        input.setAttribute('placeholder', animDiv.textContent);
-        if (i > 0) {
-            setTimeout(() => erasePlaceholder(text, i - 1), 30);
-        } else {
-            phIndex = (phIndex + 1) % placeholders.length;
-            setTimeout(() => typePlaceholder(placeholders[phIndex]), 300);
-        }
-    }
-
-    // Initialize
-    typePlaceholder(placeholders[phIndex]);
-
-    // Hide animation on focus
-    input.addEventListener('focus', () => animDiv.style.opacity = '0');
-    input.addEventListener('blur', () => animDiv.style.opacity = '1');
-    </script>
-    <!-- Loader Script -->
-    <script>
-    window.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-            const loader = document.getElementById('pageLoader');
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => loader.remove(), 400);
-            }
-        }, 4000);
-    });
-    </script>
-    <!-- Offer Count Down -->
-    <!-- Brand Carousel -->
-    <script>
-    $(document).ready(function() {
-        $('.brand-carousel').slick({
-            slidesToShow: 6,
-            slidesToScroll: 2,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            arrows: false,
-            dots: false,
-            infinite: true,
-            pauseOnHover: false,
-            responsive: [{
-                    breakpoint: 1200,
-                    settings: { slidesToShow: 4 }
-                },
-                {
-                    breakpoint: 992,
-                    settings: { slidesToShow: 3 }
-                },
-                {
-                    breakpoint: 768,
-                    settings: { slidesToShow: 2 }
-                },
-                {
-                    breakpoint: 480,
-                    settings: { slidesToShow: 1 }
-                }
-            ]
-        });
-    });
-    </script>
-    <!-- Slick slider init for testimonial -->
     <script>
     $(document).ready(function() {
         $('.testimonial-slider').slick({
@@ -469,6 +362,24 @@
             adaptiveHeight: true
         });
     });
+    </script>
+    <script>
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: false,
+            arrows: false,
+            centerMode: true,
+            focusOnSelect: true
+        });
     </script>
     <?php wp_footer(); ?>
 </body>

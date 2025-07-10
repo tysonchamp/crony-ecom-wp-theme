@@ -39,36 +39,31 @@ $wrapper_classes   = apply_filters(
 
 $attachment_ids = $product->get_gallery_image_ids();
 ?>
-<div class="product-slider">
-	<div class="product-images-wrapper">
-		<div class="preview-image-wrapper">
-			<img src="<?php echo esc_url($image_src[0]) ?>" class="preview-image" alt="Product Image" />
-			<div class="arrows hide-for-desktop">
-				<div class="next">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/images/icon-next.svg" alt="Next Icon" />
-				</div>
-				<div class="prev">
-					<img src="<?php echo get_template_directory_uri(  ) ?>/images/icon-previous.svg" alt="Previous Icon" />
-				</div>
-			</div>
-			<div class="count">
-				<p>
-					<span class="current"></span> of
-					<span class="total"></span>
-				</p>
-			</div>
+<div class="product-carousel">
+	<div class="main-slider slider-for">
+		<div class="thumb-item">
+			<iframe src="https://www.youtube.com/embed/M_Ft8OAPQ3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 		</div>
-
-		<div class="thumbs-wrapper hide-for-mobile">
-			<?php if ( $attachment_ids && $product->get_image_id() ): ?>
-				<?php $imgCounter = 1; ?>
-				<?php foreach ( $attachment_ids as $attachment_id ): ?>
-					<div class="thumb-image <?php echo $imgCounter == 1 ? 'active' : '' ?>">
-						<img src="<?php echo wp_get_attachment_image_src($attachment_id, 'full')[0] ?>" alt="Product Thumb Image" />
-					</div>
-				<?php $imgCounter++; ?>
-				<?php endforeach; ?>
-			<?php endif; ?>
-		</div>
+		<?php if ( $attachment_ids && $product->get_image_id() ): ?>
+			<?php $imgCounter = 1; ?>
+			<?php foreach ( $attachment_ids as $attachment_id ): ?>
+				<div class="slider-item">
+					<img src="<?php echo wp_get_attachment_image_src($attachment_id, 'full')[0] ?>" alt="Product Thumb Image" />
+				</div>
+			<?php $imgCounter++; ?>
+			<?php endforeach; ?>
+		<?php endif; ?>
+	</div>
+	<div class="thumbnail-slider slider-nav">
+		<div class="thumb-item video-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/b-3.jpg"></div>
+		<?php if ( $attachment_ids && $product->get_image_id() ): ?>
+			<?php $imgCounter = 1; ?>
+			<?php foreach ( $attachment_ids as $attachment_id ): ?>
+				<div class="thumb-item">
+					<img src="<?php echo wp_get_attachment_image_src($attachment_id, 'full')[0] ?>" alt="Product Thumb Image" />
+				</div>
+			<?php $imgCounter++; ?>
+			<?php endforeach; ?>
+		<?php endif; ?>
 	</div>
 </div>
