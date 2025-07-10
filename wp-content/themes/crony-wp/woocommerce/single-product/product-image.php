@@ -41,9 +41,17 @@ $attachment_ids = $product->get_gallery_image_ids();
 ?>
 <div class="product-carousel">
 	<div class="main-slider slider-for">
-		<div class="thumb-item">
-			<iframe src="https://www.youtube.com/embed/M_Ft8OAPQ3g" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-		</div>
+		<?php 
+			$featured_video = get_field('featured_video');
+			// extract the video id from the url
+			$video_id = explode('v=', $featured_video);
+			$video_id = end($video_id);
+		?>
+		<?php if(!empty($video_id)): ?>
+			<div class="thumb-item">
+				<iframe src="https://www.youtube.com/embed/<?php echo esc_attr( $video_id ); ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			</div>
+		<?php endif; ?>
 		<?php if ( $attachment_ids && $product->get_image_id() ): ?>
 			<?php $imgCounter = 1; ?>
 			<?php foreach ( $attachment_ids as $attachment_id ): ?>
@@ -55,7 +63,12 @@ $attachment_ids = $product->get_gallery_image_ids();
 		<?php endif; ?>
 	</div>
 	<div class="thumbnail-slider slider-nav">
-		<div class="thumb-item video-thumbnail"><img src="<?php echo get_template_directory_uri(); ?>/images/b-3.jpg"></div>
+		<?php $video_thumbnail = get_field('video_thumbnail'); ?>
+		<?php if ( $video_thumbnail ): ?>
+			<div class="thumb-item video-thumbnail">
+				<img src="<?php echo $video_thumbnail; ?>">
+			</div>
+		<?php endif; ?>
 		<?php if ( $attachment_ids && $product->get_image_id() ): ?>
 			<?php $imgCounter = 1; ?>
 			<?php foreach ( $attachment_ids as $attachment_id ): ?>
