@@ -221,7 +221,7 @@ get_header();
         <div class="container">
             <div class="title-div text-center">
                 <h2 class="mb-0 fw-bold">What Our Clients’ Say</h2>
-                <small>Damet consectetur tempor</small>
+                <!-- <small>Damet consectetur tempor</small> -->
             </div>
             <div class="testimonial-slider mx-auto" style="max-width:700px;">
 
